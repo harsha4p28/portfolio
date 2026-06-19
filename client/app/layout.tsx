@@ -1,5 +1,6 @@
 "use client"
 import Navbar from "@/components/Navbar"
+import DevTools from "@/components/DevTools"
 import "./globals.css"
 import { useEffect } from "react"
 
@@ -32,16 +33,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <title>Harshavardhan Cheera | Portfolio</title>
-        <meta name="description" content="Full Stack Engineer building scalable cloud systems, production-grade applications, and interactive digital experiences." />
+        <meta name="description" content="Software Engineer building scalable cloud systems, production-grade applications, and interactive digital experiences." />
       </head>
-      <body className="antialiased selection:bg-violet-500/30 selection:text-white">
+      <body className="antialiased selection:bg-red-500/30 selection:text-white">
         <div id="scroll-progress-bar" className="scroll-progress" />
         <div className="mesh-bg" />
         <div className="grid-overlay" />
         <div className="spotlight" />
         <Navbar />
         {children}
+        <DevTools />
       </body>
     </html>
   )
-}
+}
