@@ -11,17 +11,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       document.documentElement.style.setProperty("--y", `${e.clientY}px`)
     }
     window.addEventListener("mousemove", move)
-    return () => window.removeEventListener("mousemove", move)
+
+    const handleScroll = () => {
+      const bar = document.getElementById("scroll-progress-bar")
+      if (bar) {
+        const totalScroll = document.documentElement.scrollHeight - window.innerHeight
+        const percentage = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0
+        bar.style.width = `${percentage}%`
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("mousemove", move)
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   return (
     <html lang="en">
-      <body>
+      <head>
+        <title>Harshavardhan Cheera | Portfolio</title>
+        <meta name="description" content="Full Stack Engineer building scalable cloud systems, production-grade applications, and interactive digital experiences." />
+      </head>
+      <body className="antialiased selection:bg-violet-500/30 selection:text-white">
+        <div id="scroll-progress-bar" className="scroll-progress" />
         <div className="mesh-bg" />
+        <div className="grid-overlay" />
         <div className="spotlight" />
         <Navbar />
         {children}
       </body>
     </html>
   )
-}
+}

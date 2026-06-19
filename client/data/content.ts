@@ -30,11 +30,21 @@ export const projects = [
 
 export const experience = [
   {
+    company: "Travel & payments",
+    role: "Tech Intern",
+    duration: "May 2026 - Present",
+    points: [
+    "Working across multiple product modules, developing and enhancing features on both frontend and backend systems.",
+    "Handling application deployment, release management, and updates through Google Play Console.",
+    "Coordinating with developers, QA engineers, and stakeholders to ensure smooth project execution and timely delivery."
+  ],
+  },
+  {
     company: "Mitt Arv",
     role: "Software Development Intern",
-    duration: "Oct 2025 - Present",
+    duration: "Oct 2025 - Apr 2026",
     points: [
-      "Resolved 20+ frontend and backend issues across MERN stack modules.",
+      "Resolved 40+ frontend and backend issues across MERN stack modules.",
       "Implemented authentication enhancements and REST API integrations.",
       "Participated in agile sprints and code reviews.",
     ],
